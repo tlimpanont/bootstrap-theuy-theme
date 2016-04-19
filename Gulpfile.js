@@ -22,7 +22,9 @@ gulp.task('sass:bootstrap-theuy', function () {
 });
 
 gulp.task('copy:fonts', function () {
-  return gulp.src(path.resolve(__dirname, 'node_modules/bootstrap-sass/assets/fonts/*'))
+  return gulp.src(
+    [path.resolve(__dirname, 'node_modules/bootstrap-sass/assets/fonts/**/*')]
+  )
   	.pipe(gulp.dest(path.resolve(__dirname, 'dist/fonts/')));
 });
 
