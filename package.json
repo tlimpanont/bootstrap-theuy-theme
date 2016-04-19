@@ -1,7 +1,7 @@
 {
   "name": "bootstrap-theuy-theme",
-  "version": "1.0.4",
-  "description": "custom bootstrap theme based own default bootstrap and flatly bootswatch ",
+  "version": "1.0.3",
+  "description": "custom bootstrap theme based own default bootstrap and flatly bootswatch",
   "dependencies": {
     "bootstrap-sass": "^3.3.6"
   },
