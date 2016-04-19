@@ -1,18 +1,22 @@
 {
   "name": "bootstrap-theuy-theme",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "my extension of bootstrap & bootswatch theme",
   "dependencies": {
     "bootstrap-sass": "^3.3.6"
   },
   "devDependencies": {
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-copy": "0.0.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-run-sequence": "^0.3.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-util": "^3.0.7",
     "node-sass": "^3.4.2"
   },
   "scripts": {
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
