@@ -21,6 +21,13 @@ server.connection({
   port: (process.env.PORT || 5000)
 });
 
+server.route({
+    method: 'GET',
+    path:'/',
+    handler: function (request, reply) {
+      return reply('static files server');
+    }
+});
 // Add the route
 server.route({
   method: 'GET',
