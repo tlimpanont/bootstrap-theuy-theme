@@ -1,6 +1,7 @@
 {
   "name": "bootstrap-theuy-theme",
-  "version": "1.0.3",
+  "version": "1.0.4",
+  "main": "index.js",
   "description": "custom bootstrap theme based own default bootstrap and flatly bootswatch",
   "dependencies": {
     "bootstrap-sass": "^3.3.6"
@@ -13,11 +14,16 @@
     "gulp-run-sequence": "^0.3.2",
     "gulp-sass": "^2.2.0",
     "gulp-util": "^3.0.7",
-    "node-sass": "^3.4.2"
+    "hapi": "^13.3.0",
+    "http-server": "^0.9.0",
+    "inert": "^3.2.0",
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.9.1"
   },
   "scripts": {
+    "start": "node index.js",
     "build": "gulp build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo 'no test till now' "
   },
   "repository": {
     "type": "git",
