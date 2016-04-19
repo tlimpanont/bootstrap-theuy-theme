@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-theuy-theme",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "index.js",
   "description": "custom bootstrap theme based own default bootstrap and flatly bootswatch",
   "dependencies": {
