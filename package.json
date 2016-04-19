@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-theuy-theme",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "my extension of bootstrap & bootswatch theme",
   "dependencies": {
     "bootstrap-sass": "^3.3.6"
