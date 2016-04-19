@@ -20,6 +20,9 @@
     "nodemon": "^1.9.1",
     "semantic-release": "^4.3.5"
   },
+  "release": {
+    "branch": "master"
+  },
   "scripts": {
     "start": "node index.js",
     "build": "gulp build",
