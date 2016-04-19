@@ -1,0 +1,28 @@
+{
+  "name": "bootstrap-theuy-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6"
+  },
+  "devDependencies": {
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp": "^3.9.1",
+    "node-sass": "^3.4.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlimpanont/bootstrap-theuy-theme.git"
+  },
+  "author": "Theuy Limpanont <info@theuy.nl> (http://theuy.nl)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tlimpanont/bootstrap-theuy-theme/issues"
+  },
+  "homepage": "https://github.com/tlimpanont/bootstrap-theuy-theme#readme"
+}
