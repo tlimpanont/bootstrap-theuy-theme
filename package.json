@@ -6,6 +6,7 @@
     "bootstrap-sass": "^3.3.6"
   },
   "devDependencies": {
+    "cz-conventional-changelog": "^1.1.5",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-copy": "0.0.2",
@@ -36,5 +37,10 @@
   "bugs": {
     "url": "https://github.com/tlimpanont/bootstrap-theuy-theme/issues"
   },
-  "homepage": "https://github.com/tlimpanont/bootstrap-theuy-theme#readme"
+  "homepage": "https://github.com/tlimpanont/bootstrap-theuy-theme#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
