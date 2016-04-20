@@ -52,5 +52,5 @@ gulp.task('fonts:default', function () {
 });
 
 gulp.task('build', function(cb) {
-    runSequence('clean:dist', 'sass:default', _.flatten(buildTaskNames), cb);
+    runSequence('clean:dist', 'sass:default', 'fonts:default', _.flatten(buildTaskNames), cb);
 });
