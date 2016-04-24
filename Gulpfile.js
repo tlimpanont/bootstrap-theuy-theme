@@ -9,7 +9,12 @@ var runSequence = require('gulp-run-sequence');
 var path = require('path');
 var _ = require('lodash');
 
-var themes = ['flatly', 'darkly'];
+var themes = [
+    'flatly',
+    'darkly',
+    'default'
+];
+
 var buildTaskNames = [];
 
 themes.forEach(function (theme) {
@@ -38,19 +43,6 @@ gulp.task('clean:dist', function () {
         .pipe(clean().on('error', gutil.log));
 });
 
-gulp.task('sass:default', function () {
-    return gulp.src(path.resolve(__dirname, 'themes/_default.scss'))
-        .pipe(rename('default.css'))
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest(path.resolve(__dirname, 'dist/')));
-});
-
-
-gulp.task('fonts:default', function () {
-    return gulp.src(path.resolve(__dirname, 'node_modules/bootstrap-sass/assets/fonts/**/*'))
-        .pipe(gulp.dest(path.resolve(__dirname, 'dist/fonts/')));
-});
-
 gulp.task('build', function(cb) {
-    runSequence('clean:dist', 'sass:default', 'fonts:default', _.flatten(buildTaskNames), cb);
+    runSequence('clean:dist', _.flatten(buildTaskNames), cb);
 });
