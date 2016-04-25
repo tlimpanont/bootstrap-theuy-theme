@@ -19,12 +19,16 @@ const server = new hapi.Server({
     }
 });
 
-server.register(inert, () => {
-});
+server.register(inert);
+
 
 server.connection({
     port: (process.env.PORT || 5000)
 });
+
+function getCurrentUrl(request) {
+    return request.connection.info.protocol + '://' + request.info.host + request.url.path;
+}
 
 server.route({
     method: 'GET',
@@ -41,8 +45,8 @@ server.route({
                     if (er) {
                         reject(er);
                     } else {
-                        console.log(request.connection.info.uri);
-                        var urls = files.map((file) => request.connection.info.uri + '/' + distFolder + '/' + themeDir + '/' + file);
+
+                        var urls = files.map((file) => getCurrentUrl(request) + distFolder  + '/' + themeDir + '/' + file );
                         var theme = {};
                         theme.name = themeDir;
                         var onlyExtensionUrls = urls.filter((url) => {
@@ -64,7 +68,7 @@ server.route({
                 reply({
                     version: _.last(npmInfo.versions),
                     repository: npmInfo.repository,
-                    dist: request.connection.info.uri + '/' + distFolder,
+                    dist: getCurrentUrl(request) + distFolder,
                     themes: themes
                 })
             });
