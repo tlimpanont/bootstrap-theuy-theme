@@ -1,51 +1,107 @@
 'use strict';
 
-const Hapi = require('hapi');
-const Inert = require('inert');
-const Path = require('path');
+const hapi = require('hapi');
+const inert = require('inert');
+const path = require('path');
+const url = require('url');
+const glob = require("glob");
+const _ = require('lodash');
+var exec = require('child_process').exec;
 
 // Create a server with a host and port
-const server = new Hapi.Server({
-  connections: {
+const server = new hapi.Server({
+    connections: {
         routes: {
             files: {
-                relativeTo: Path.join(__dirname, 'dist')
+                relativeTo: path.join(__dirname, 'dist')
             }
         }
     }
 });
 
-server.register(Inert, () => {});
+server.register(inert, () => {
+});
 
 server.connection({
-  port: (process.env.PORT || 5000)
+    port: (process.env.PORT || 5000)
 });
 
 server.route({
     method: 'GET',
-    path:'/',
+    path: '/',
     handler: function (request, reply) {
-      return reply('static files server');
+        var distFolder = 'dist';
+        var themesConfig = require('./themes.config.json');
+
+        var promises = [];
+
+        themesConfig.themeDirectories.forEach((themeDir) => {
+            promises.push(new Promise((resolve, reject) => {
+                glob("**/*", {cwd: path.resolve(__dirname, distFolder, themeDir)}, (er, files) => {
+                    if (er) {
+                        reject(er);
+                    } else {
+                        console.log(request.connection.info.uri);
+                        var urls = files.map((file) => request.connection.info.uri + '/' + distFolder + '/' + themeDir + '/' + file);
+                        var theme = {};
+                        theme.name = themeDir;
+                        var onlyExtensionUrls = urls.filter((url) => {
+                            return (path.extname(url))
+                        });
+                        onlyExtensionUrls.forEach((url) => {
+                            theme[path.extname(url).replace('.', '')] = url
+                        });
+                        resolve(theme);
+                    }
+                });
+            }));
+        });
+
+
+        Promise.all(promises).then((themes) => {
+            exec('npm info --json', function (err, out) {
+                var npmInfo = JSON.parse(out);
+                reply({
+                    version: _.last(npmInfo.versions),
+                    repository: npmInfo.repository,
+                    dist: request.connection.info.uri + '/' + distFolder,
+                    themes: themes
+                })
+            });
+
+        });
     }
 });
-// Add the route
+
+
 server.route({
-  method: 'GET',
-  path: '/{param*}',
-  handler: {
-    directory: {
-      path: '.',
-      redirectToSlash: true,
-      index: true
+    method: 'GET',
+    path: '/dist/{param*}',
+    handler: {
+        directory: {
+            path: '.',
+            listing: true
+        }
     }
-  }
+});
+
+server.route({
+    method: 'GET',
+    path: '/{param*}',
+    handler: {
+        directory: {
+            path: '.',
+            redirectToSlash: true,
+            index: true
+        }
+    }
 });
 
 // Start the server
 server.start((err) => {
 
-  if (err) {
-    throw err;
-  }
-  console.log('Server running at:', server.info.uri);
+    if (err) {
+        throw err;
+    }
+    console.log('Server running at:', server.info.uri);
 });

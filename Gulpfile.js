@@ -8,16 +8,13 @@ var gutil = require('gulp-util');
 var runSequence = require('gulp-run-sequence');
 var path = require('path');
 var _ = require('lodash');
+var themesConfig = require('./themes.config.json');
 
-var themes = [
-    'flatly',
-    'darkly',
-    'default'
-];
+var themeDirectories = themesConfig.themeDirectories;
 
 var buildTaskNames = [];
 
-themes.forEach(function (theme) {
+themeDirectories.forEach(function (theme) {
     var sassTaskName = 'sass:' + theme;
     var fontTaskName = 'fonts:' + theme;
 
