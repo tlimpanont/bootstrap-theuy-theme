@@ -2,6 +2,7 @@
   "themeDirectories": [
     "darkly",
     "default",
-    "flatly"
+    "flatly",
+    "ugly"
   ]
 }
