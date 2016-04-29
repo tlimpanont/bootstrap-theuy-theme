@@ -1,0 +1,47 @@
+{
+  "name": "bootstrap-theuy-theme",
+  "main": "index.js",
+  "description": "custom bootstrap theme based own default bootstrap and flatly bootswatch",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^1.1.5",
+    "glob": "^7.0.3",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-copy": "0.0.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-run-sequence": "^0.3.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-util": "^3.0.7",
+    "hapi": "^13.3.0",
+    "http-server": "^0.9.0",
+    "inert": "^3.2.0",
+    "lodash": "^4.11.1",
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.9.1",
+    "semantic-release": "^4.3.5"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "build": "gulp build",
+    "test": "echo 'no test till now' ",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tlimpanont/bootstrap-theuy-theme.git"
+  },
+  "author": "Theuy Limpanont <info@theuy.nl> (http://theuy.nl)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tlimpanont/bootstrap-theuy-theme/issues"
+  },
+  "homepage": "https://github.com/tlimpanont/bootstrap-theuy-theme#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
