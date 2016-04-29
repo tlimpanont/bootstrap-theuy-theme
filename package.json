@@ -24,10 +24,8 @@
     "semantic-release": "^4.3.5"
   },
   "scripts": {
-    "start": "node index.js",
-    "build": "gulp build",
-    "test": "echo 'no test till now' ",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "package": "gulp build || exit 1 && $(cd docker &&./build.sh)",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
