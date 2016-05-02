@@ -1,5 +1,6 @@
 {
   "name": "hamis-bootstrap-theme",
+  "version": "1.0.0",
   "main": "index.js",
   "description": "hamis web front-end theme based on bootstrap",
   "dependencies": {
@@ -11,6 +12,9 @@
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-copy": "0.0.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-run-sequence": "^0.3.2",
     "gulp-sass": "^2.2.0",
@@ -18,15 +22,18 @@
     "hapi": "^13.3.0",
     "http-server": "^0.9.0",
     "inert": "^3.2.0",
+    "jade": "^1.11.0",
     "lodash": "^4.11.1",
     "node-sass": "^3.4.2",
     "nodemon": "^1.9.1",
-    "semantic-release": "^4.3.5"
+    "require-dir": "^0.3.0",
+    "semantic-release": "^4.3.5",
+    "vision": "^4.1.0"
   },
   "scripts": {
     "package": "./node_modules/gulp/bin/gulp.js build || exit 1 && $(cd docker &&./build.sh)",
-    "start": "node index.js",
-    "build": "./node_modules/gulp/bin/gulp.js build"
+    "start": "node server.js",
+    "dev-server": "./node_modules/gulp/bin/gulp.js dev-server"
   },
   "repository": {
     "type": "git",

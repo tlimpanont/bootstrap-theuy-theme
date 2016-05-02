@@ -1,0 +1,37 @@
+'use strict';
+
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var rename = require('gulp-rename');
+var path = require('path');
+var _ = require('lodash');
+var livereload = require('gulp-livereload');
+
+var themesConfig = require('../themes.config');
+var themeDirectoryNames = themesConfig.themeDirectoryNames;
+
+var buildTaskNames = [];
+
+themeDirectoryNames.forEach(function (theme) {
+    var sassTaskName = 'sass:' + theme;
+    var fontTaskName = 'fonts:' + theme;
+    
+    gulp.task(sassTaskName, function () {
+        return gulp.src(themesConfig.getThemeSrcFile(theme))
+            .pipe(rename('style.css'))
+            .pipe(sass().on('error', sass.logError))
+            .pipe(gulp.dest(themesConfig.getThemeDestPath(theme)))
+            .pipe(livereload());
+    });
+
+    gulp.task(fontTaskName, function () {
+        return gulp.src(themesConfig.getBootstrapFontFiles())
+            .pipe(gulp.dest(themesConfig.getThemeFontDest(theme)))
+            .pipe(livereload());
+    });
+
+    buildTaskNames.push([sassTaskName, fontTaskName]);
+});
+
+gulp.task('sass-fonts', _.flatten(buildTaskNames));
+
