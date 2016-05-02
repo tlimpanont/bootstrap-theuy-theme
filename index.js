@@ -66,16 +66,13 @@ server.route({
 
 
         Promise.all(promises).then((themes) => {
-            exec('npm info --json', function (err, out) {
-                var npmInfo = JSON.parse(out);
-                reply({
-                    version: _.last(npmInfo.versions),
-                    repository: npmInfo.repository,
-                    dist: getCurrentUrl(request) + distFolder,
-                    themes: themes
-                })
+            var npmInfo = require('./package.json');
+            reply({
+                version: _.last(npmInfo.versions),
+                repository: npmInfo.repository,
+                dist: getCurrentUrl(request) + distFolder,
+                themes: themes
             });
-
         });
     }
 });
