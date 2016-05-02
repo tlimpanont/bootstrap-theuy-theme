@@ -1,7 +1,7 @@
 {
-  "name": "bootstrap-theuy-theme",
+  "name": "hamis-bootstrap-theme",
   "main": "index.js",
-  "description": "custom bootstrap theme based own default bootstrap and flatly bootswatch",
+  "description": "hamis web front-end theme based on bootstrap",
   "dependencies": {
     "bootstrap-sass": "^3.3.6"
   },
@@ -24,22 +24,13 @@
     "semantic-release": "^4.3.5"
   },
   "scripts": {
-    "package": "gulp build || exit 1 && $(cd docker &&./build.sh)",
-    "start": "node index.js"
+    "package": "./node_modules/gulp/bin/gulp.js build || exit 1 && $(cd docker &&./build.sh)",
+    "start": "node index.js",
+    "build": "./node_modules/gulp/bin/gulp.js build"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tlimpanont/bootstrap-theuy-theme.git"
+    "url": "https://limpanontt@stash.hamis.nl/scm/com/hamis-bootstrap-theme.git"
   },
-  "author": "Theuy Limpanont <info@theuy.nl> (http://theuy.nl)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tlimpanont/bootstrap-theuy-theme/issues"
-  },
-  "homepage": "https://github.com/tlimpanont/bootstrap-theuy-theme#readme",
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+  "homepage": "https://stash.hamis.nl/projects/COM/repos/hamis-bootstrap-theme/browse"
 }
