@@ -1,6 +1,7 @@
-@import 'font-faces';
-@import 'colors';
-@import 'typography';
+@import "font-faces";
+@import "colors";
+@import "typography";
+@import "iconography";
 
 
 $bootstrap-sass-asset-helper: false !default;
@@ -22,23 +23,6 @@ $link-color:            $blue !default;
 $link-hover-color:      $blue;
 //** Link hover decoration.
 $link-hover-decoration: underline !default;
-a:link, a:visited, a { text-decoration: underline;}
-
-//== Iconography
-//
-//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
-
-//** Load fonts from this directory.
-
-// [converter] If $bootstrap-sass-asset-helper if used, provide path relative to the assets load path.
-// [converter] This is because some asset helpers, such as Sprockets, do not work with file-relative paths.
-$icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/bootstrap/") !default;
-
-//** File name for all font files.
-$icon-font-name:          "glyphicons-halflings-regular" !default;
-//** Element ID within SVG icon file.
-$icon-font-svg-id:        "glyphicons_halflingsregular" !default;
-
 
 //== Components
 //
@@ -153,6 +137,7 @@ $input-border:                   #ccc !default;
 $input-border-radius:            $border-radius-base !default;
 //** Large `.form-control` border radius
 $input-border-radius-large:      $border-radius-large !default;
+
 //** Small `.form-control` border radius
 $input-border-radius-small:      $border-radius-small !default;
 
@@ -160,12 +145,12 @@ $input-border-radius-small:      $border-radius-small !default;
 $input-border-focus:             #66afe9 !default;
 
 //** Placeholder text color
-$input-color-placeholder:        #999 !default;
+$input-color-placeholder:        $semi-gray !default;
 
 //** Default `.form-control` height
 $input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
 //** Large `.form-control` height
-$input-height-large:             (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
+$input-height-large:             60px !default;
 //** Small `.form-control` height
 $input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;
 
