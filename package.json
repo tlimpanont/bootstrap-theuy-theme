@@ -1,44 +1,38 @@
 {
   "name": "hamis-bootstrap-theme",
   "version": "1.0.0",
-  "main": "index.js",
-  "description": "hamis web front-end theme based on bootstrap",
+  "description": "HaMIS Theme JSON API including dev-server and showcases",
+  "main": "server.js",
   "dependencies": {
-    "bootstrap-sass": "^3.3.6"
+    "bootstrap-sass": "^3.3.6",
+    "handlebars": "^4.0.5",
+    "hapi": "^13.3.0",
+    "inert": "^3.2.1",
+    "node-sass": "^3.4.2",
+    "require-dir": "^0.3.0",
+    "vision": "^4.1.0"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^1.1.5",
-    "glob": "^7.0.3",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
-    "gulp-copy": "0.0.2",
+    "gulp-copy": "^0.0.2",
     "gulp-livereload": "^3.8.1",
     "gulp-nodemon": "^2.0.6",
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-run-sequence": "^0.3.2",
     "gulp-sass": "^2.2.0",
-    "gulp-util": "^3.0.7",
-    "handlebars": "^4.0.5",
-    "hapi": "^13.3.0",
-    "http-server": "^0.9.0",
-    "inert": "^3.2.0",
-    "jade": "^1.11.0",
-    "lodash": "^4.11.1",
-    "node-sass": "^3.4.2",
-    "nodemon": "^1.9.1",
-    "require-dir": "^0.3.0",
-    "semantic-release": "^4.3.5",
-    "vision": "^4.1.0"
+    "gulp-util": "^3.0.7"
   },
   "scripts": {
-    "package": "./node_modules/gulp/bin/gulp.js build || exit 1 && $(cd docker &&./build.sh)",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev-server": "./node_modules/gulp/bin/gulp.js dev-server"
+    "package": "$(cd docker &&./build.sh)"
   },
   "repository": {
     "type": "git",
     "url": "https://limpanontt@stash.hamis.nl/scm/com/hamis-bootstrap-theme.git"
   },
-  "homepage": "https://stash.hamis.nl/projects/COM/repos/hamis-bootstrap-theme/browse"
+  "author": "HaMIS team Port of Rotterdam",
+  "license": "ISC"
 }

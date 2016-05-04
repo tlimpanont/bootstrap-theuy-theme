@@ -5971,3 +5971,6 @@ button.close {
       top: 10px;
       right: 60px;
       z-index: 5; }
+
+a:link, a:visited, a {
+  text-decoration: underline; }
