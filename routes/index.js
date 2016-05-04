@@ -22,16 +22,20 @@ module.exports = {
                     if (er) {
                         reject(er);
                     } else {
-
                         var urls = files.map((file) => getCurrentUrl(request) + distFolder  + '/' + themeDir + '/' + file );
                         var theme = {};
                         theme.name = themeDir;
-                        var onlyExtensionUrls = urls.filter((url) => {
-                            return (path.extname(url))
+                        var onlyCSSUrls = urls.filter((url) => {
+                            return (path.extname(url) === '.css')
                         });
-                        onlyExtensionUrls.forEach((url) => {
-                            theme[path.extname(url).replace('.', '')] = url
+
+                        onlyCSSUrls.forEach((url) => {
+                            var cssKey = path.extname(url).replace('.', '');
+                            theme[cssKey] = url;
+                            var folderUrl = url.replace(/\w+\.css/, '');
+                            theme['folder'] = folderUrl;
                         });
+
                         resolve(theme);
                     }
                 });
