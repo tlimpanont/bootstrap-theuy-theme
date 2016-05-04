@@ -1,7 +1,7 @@
 module.exports = {
     method: 'GET',
-    path: '/docs',
+    path: '/showcase',
     handler: (request, reply) => {
-        reply.view('index');
+        reply.view('showcase');
     }
 };

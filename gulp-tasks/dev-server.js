@@ -15,8 +15,7 @@ gulp.task('nodemon', function () {
 
     nodemon({
         script: path.resolve(__dirname, '../server.js'),
-        ext: 'js jade',
-        tasks: ['build']
+        ext: 'js html'
     })
     .on('restart', function () {
         setTimeout(function() {

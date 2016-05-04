@@ -1,0 +1,30 @@
+@mixin palette($name, $palette) {
+
+  &.#{$name} {
+    background-color: $palette;
+  }
+}
+
+.palette-tile {
+  width: 60px;
+  height: 60px;
+  float: left;
+  margin: 0 20px 20px 0;
+
+  @include palette('blue', $blue);
+  @include palette('blue-heaven', $blue-heaven);
+  @include palette('light-blue', $light-blue);
+  @include palette('lighter-blue', $lighter-blue);
+  @include palette('blue-sea', $blue-sea);
+
+  @include palette('green', $green);
+  @include palette('orange', $orange);
+  @include palette('red', $red);
+
+  @include palette('grey', $grey);
+  @include palette('mid-grey', $mid-grey);
+  @include palette('semi-grey', $semi-grey);
+  @include palette('light-grey', $light-grey);
+}
+
+

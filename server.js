@@ -33,17 +33,23 @@ server.register(plugins, (err) => {
     }
 
     server.views({
-        engines: {jade: require('jade')},
-        path: 'routes/views',
+        engines: {
+            'html': {
+                module: require('handlebars'),
+                compileMode: 'sync'
+            }
+        },
         relativeTo: __dirname,
-        compileOptions: {
-            pretty: true
-        }
+        path: 'routes/views',
+        layoutPath: 'routes/views/layout',
+        partialsPath: 'routes/views/partials',
+        compileOptions: { pretty: true },
+        layout: 'layout'
     });
 
     server.route(require('./routes/index'));
     server.route(require('./routes/dist'));
-    server.route(require('./routes/docs'));
+    server.route(require('./routes/showcase'));
 
     server.start((err) => {
 

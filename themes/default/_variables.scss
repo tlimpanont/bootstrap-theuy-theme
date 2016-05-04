@@ -8,7 +8,25 @@ $bootstrap-sass-asset-helper: false !default;
 //
 //## Gray and brand colors for use across Bootstrap.
 
-$gray-base:              green !default;
+/**===== UI_HaMIS.psd ===== */
+
+$blue: #003399;
+$blue-heaven: #0092d6;
+$light-blue: #dceffd;
+$lighter-blue: #eef7fe;
+$blue-sea: #007e91;
+
+$green: #46be41;
+$orange: #f39900;
+$red: #e52d12;
+
+$grey: #333333;
+$mid-grey: #666666;
+$semi-grey: #999999;
+$light-grey: #cccccc;
+
+
+$gray-base:              #000 !default;
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              lighten($gray-base, 20%) !default;   // #333
 $gray:                   lighten($gray-base, 33.5%) !default; // #555
