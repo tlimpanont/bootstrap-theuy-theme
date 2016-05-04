@@ -10,6 +10,9 @@ module.exports = {
     getThemeSrcFile(theme) {
         return path.resolve(__dirname , 'themes/_' + theme + '.scss');
     },
+    getThemeFontFiles(theme) {
+        return path.resolve(__dirname, 'themes/' + theme + '/fonts/**/*');
+    },
     getThemeDestPath(theme) {
         return path.resolve(__dirname, 'dist/' + theme + '/');
     },

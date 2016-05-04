@@ -1,0 +1,32 @@
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$blue: #003399;
+$blue-heaven: #0092d6;
+$light-blue: #dceffd;
+$lighter-blue: #eef7fe;
+$blue-sea: #007e91;
+
+$green: #46be41;
+$orange: #f39900;
+$red: #e52d12;
+
+$gray: #333333;
+$mid-gray: #666666;
+$semi-gray: #999999;
+$light-gray: #cccccc;
+
+
+$gray-base:              $semi-gray !default;
+$gray-darker:            $gray !default;
+$gray-dark:              $gray !default;
+$gray:                   $gray !default;
+$gray-light:             $semi-gray !default;
+$gray-lighter:           $light-gray !default;
+
+$brand-primary:         $blue-heaven !default;
+$brand-success:         $green !default;
+$brand-info:            $light-blue !default;
+$brand-warning:         $orange !default;
+$brand-danger:          $red !default;

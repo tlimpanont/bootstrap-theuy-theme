@@ -14,8 +14,9 @@ var buildTaskNames = [];
 
 themeDirectoryNames.forEach(function (theme) {
     var sassTaskName = 'sass:' + theme;
-    var fontTaskName = 'fonts:' + theme;
-    
+    var bootstrapFontTaskName = 'bootstrap_fonts:' + theme;
+    var themeFontTaskName = 'fonts:' + theme;
+
     gulp.task(sassTaskName, function () {
         return gulp.src(themesConfig.getThemeSrcFile(theme))
             .pipe(rename('style.css'))
@@ -24,13 +25,19 @@ themeDirectoryNames.forEach(function (theme) {
             .pipe(livereload());
     });
 
-    gulp.task(fontTaskName, function () {
+    gulp.task(bootstrapFontTaskName, function () {
         return gulp.src(themesConfig.getBootstrapFontFiles())
             .pipe(gulp.dest(themesConfig.getThemeFontDest(theme)))
             .pipe(livereload());
     });
 
-    buildTaskNames.push([sassTaskName, fontTaskName]);
+    gulp.task(themeFontTaskName, function () {
+        return gulp.src(themesConfig.getThemeFontFiles(theme))
+            .pipe(gulp.dest(themesConfig.getThemeFontDest(theme)))
+            .pipe(livereload());
+    });
+
+    buildTaskNames.push([sassTaskName, bootstrapFontTaskName, themeFontTaskName]);
 });
 
 gulp.task('sass-fonts', _.flatten(buildTaskNames));

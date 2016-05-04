@@ -21,10 +21,10 @@
   @include palette('orange', $orange);
   @include palette('red', $red);
 
-  @include palette('grey', $grey);
-  @include palette('mid-grey', $mid-grey);
-  @include palette('semi-grey', $semi-grey);
-  @include palette('light-grey', $light-grey);
+  @include palette('grey', $gray);
+  @include palette('mid-gray', $mid-gray);
+  @include palette('semi-gray', $semi-gray);
+  @include palette('light-gray', $light-gray);
 }
 
 
