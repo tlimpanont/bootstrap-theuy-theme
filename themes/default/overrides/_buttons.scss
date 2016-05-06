@@ -1,0 +1,40 @@
+@import "../custom-colors";
+@import "../custom-typography";
+@import "../custom-buttons";
+@import "../custom-font-faces";
+
+
+
+@mixin button-bg-hover($color) {
+  &:hover {
+    background: darken($color, 5%);
+  }
+}
+
+.btn {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+
+  &:active {
+    background: #0075ab !important;
+  }
+
+  &:hover {
+    background: #33a8de;
+  }
+
+  &.btn-secondary {
+    background: white;
+    border: 1px solid $light-gray;
+    color: $semi-gray;
+    @extend .semi-bold;
+    @include button-bg-hover(white);
+  }
+
+  &.btn-modal {
+    background: $blue-sea;
+    color: white;
+    @include button-bg-hover($blue-sea);
+  }
+}
