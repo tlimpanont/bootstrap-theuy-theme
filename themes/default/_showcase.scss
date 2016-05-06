@@ -1,3 +1,5 @@
+@import "custom-colors";
+
 @mixin palette($name, $palette) {
 
   &.#{$name} {
