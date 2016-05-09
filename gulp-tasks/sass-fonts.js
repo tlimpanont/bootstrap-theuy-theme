@@ -6,6 +6,7 @@ var rename = require('gulp-rename');
 var path = require('path');
 var _ = require('lodash');
 var livereload = require('gulp-livereload');
+var autoprefixer = require('gulp-autoprefixer');
 
 var themesConfig = require('../themes.config');
 var themeDirectoryNames = themesConfig.themeDirectoryNames;
@@ -21,6 +22,10 @@ themeDirectoryNames.forEach(function (theme) {
         return gulp.src(themesConfig.getThemeSrcFile(theme))
             .pipe(rename('style.css'))
             .pipe(sass().on('error', sass.logError))
+            .pipe(autoprefixer({
+                browsers: ['last 3 versions'],
+                cascade: false
+            }))
             .pipe(gulp.dest(themesConfig.getThemeDestPath(theme)))
             .pipe(livereload());
     });
