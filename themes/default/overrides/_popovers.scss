@@ -1,0 +1,37 @@
+@import "../custom-colors";
+@import "../custom-font-faces";
+
+.popover {
+  padding: 20px;
+
+  .popover-title {
+    margin: 0;
+    padding: 0 0 5px 0;
+    font-size: 14px;
+    background-color: #fff;
+    border: none;
+  }
+  .popover-content {
+    padding: 0;
+  }
+}
+
+.text-success + .popover .popover-title {
+  color: $green;
+  @extend .semi-bold;
+}
+
+.text-warning + .popover .popover-title {
+  color: $orange;
+  @extend .semi-bold;
+}
+
+.text-danger + .popover .popover-title {
+  color: $red;
+  @extend .semi-bold;
+}
+
+.text-info + .popover .popover-title {
+  color: $blue;
+  @extend .semi-bold;
+}

@@ -10,7 +10,7 @@
     display: inline-block;
   }
 
-  &:hover {
+  &:hover, &:active, &:focus {
     .btn-cover, .btn-revealer {
       transform: translateX(-100%);
     }
@@ -21,7 +21,7 @@
       transform: translateX(-100% * 2);
     }
 
-    &:hover {
+    &:hover, &:active, &:focus {
       .btn-revealer {
         transform: translateX(-100%);
       }
@@ -32,7 +32,7 @@
   }
 
   &.right-to-left {
-    &:hover {
+    &:hover, &:active, &:focus {
       .btn-cover, .btn-revealer {
         transform: translateX(-100%);
       }
