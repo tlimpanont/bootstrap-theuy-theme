@@ -2,29 +2,7 @@
 @import "../custom-typography";
 @import "../custom-buttons";
 @import "../custom-font-faces";
-
-
-@mixin btn-animation() {
-  transform: translateX(-100%);
-}
-
-.btn-animated {
-  position: relative;
-  overflow: hidden;
-  padding: 0;
-
-  .btn-revealer, .btn-cover {
-    width: 100%; padding: 10px;
-    transition: all 0.3s ease-in-out;
-    display: inline-block;
-  }
-
-  &:hover {
-    .btn-cover, .btn-revealer {
-      @include btn-animation();
-    }
-  }
-}
+@import "animated-buttons";
 
 @mixin button-bg-hover($color) {
   &:hover {

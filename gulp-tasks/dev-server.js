@@ -3,7 +3,6 @@ var notify = require('gulp-notify');
 var livereload = require('gulp-livereload');
 var nodemon = require('gulp-nodemon');
 var path = require('path');
-var themesConfig = require('../themes.config');
 var runSequence = require('gulp-run-sequence');
 
 gulp.task('dev-server', function (cb) {

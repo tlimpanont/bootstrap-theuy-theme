@@ -6168,6 +6168,14 @@ a:link, a:visited, a {
     display: inline-block; }
   .btn-animated:hover .btn-cover, .btn-animated:hover .btn-revealer {
     transform: translateX(-100%); }
+  .btn-animated.left-to-right .btn-revealer {
+    transform: translateX(-200%); }
+  .btn-animated.left-to-right:hover .btn-revealer {
+    transform: translateX(-100%); }
+  .btn-animated.left-to-right:hover .btn-cover {
+    transform: translateX(100%); }
+  .btn-animated.right-to-left:hover .btn-cover, .btn-animated.right-to-left:hover .btn-revealer {
+    transform: translateX(-100%); }
 
 .btn {
   -webkit-transition: background-color 0.3s;

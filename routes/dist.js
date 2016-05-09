@@ -1,6 +1,6 @@
 module.exports = {
     method: 'GET',
-    path: '/dist/{param*}',
+    path: '/{param*}',
     handler: {
         directory: {
             path: '.',

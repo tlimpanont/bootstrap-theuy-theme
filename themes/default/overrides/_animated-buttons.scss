@@ -1,0 +1,41 @@
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+
+  .btn-revealer, .btn-cover {
+    width: 100%;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+  }
+
+  &:hover {
+    .btn-cover, .btn-revealer {
+      transform: translateX(-100%);
+    }
+  }
+
+  &.left-to-right {
+    .btn-revealer {
+      transform: translateX(-100% * 2);
+    }
+
+    &:hover {
+      .btn-revealer {
+        transform: translateX(-100%);
+      }
+      .btn-cover {
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  &.right-to-left {
+    &:hover {
+      .btn-cover, .btn-revealer {
+        transform: translateX(-100%);
+      }
+    }
+  }
+}

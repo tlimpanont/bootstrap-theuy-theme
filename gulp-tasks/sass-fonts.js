@@ -14,7 +14,7 @@ var buildTaskNames = [];
 
 themeDirectoryNames.forEach(function (theme) {
     var sassTaskName = 'sass:' + theme;
-    var bootstrapFontTaskName = 'bootstrap_fonts:' + theme;
+    var bootstrapFontTaskName = 'bootstrap-fonts:' + theme;
     var themeFontTaskName = 'fonts:' + theme;
 
     gulp.task(sassTaskName, function () {

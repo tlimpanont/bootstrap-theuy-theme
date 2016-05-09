@@ -7,8 +7,14 @@ module.exports = {
         'default',
         'ugly'
     ],
+    getThemeScriptsDestPath(theme) {
+        return path.resolve(__dirname, 'dist/' + theme + '/scripts/');
+    },
+    getBootstrapJSFile() {
+        return path.resolve(__dirname, 'node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js');
+    },
     getThemeSrcFile(theme) {
-        return path.resolve(__dirname , 'themes/_' + theme + '.scss');
+        return path.resolve(__dirname, 'themes/_' + theme + '.scss');
     },
     getThemeFontFiles(theme) {
         return path.resolve(__dirname, 'themes/' + theme + '/fonts/**/*');
@@ -26,7 +32,7 @@ module.exports = {
         return path.resolve(__dirname, 'dist');
     },
     getThemeSassWatch() {
-        return path.resolve(__dirname,'themes/**/*.scss');
+        return path.resolve(__dirname, 'themes/**/*.scss');
     },
     getRouteViewsWatch() {
         return path.resolve(__dirname, 'routes/views/**/*.jade');
