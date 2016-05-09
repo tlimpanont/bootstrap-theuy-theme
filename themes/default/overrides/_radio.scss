@@ -1,13 +1,13 @@
 @import "../custom-colors";
 @import "../custom-typography";
 
-input[type="radio"] {
-  opacity: 0;
+.radio input[type="radio"],  .radio-inline input[type="radio"]  {
+  visibility: hidden;
 }
 
 @mixin custom-radio-position() {
   position: absolute;
-  left: -6px;
+  left: 0;
   top: 0;
 }
 
@@ -20,20 +20,19 @@ input[type="radio"] {
     display: inline-block;
     @include custom-radio-position();
   }
-}
+  input[type="radio"]:checked + span:before {
+    font-family: "Arial Black";
+    content: "•";
+    color: white;
+    font-size: 15px;
+    display: block;
+    padding: 0px 5px;
+  }
 
-input[type="radio"]:checked + span:before {
-  font-family: "Arial Black";
-  content: "•";
-  color: white;
-  font-size: 15px;
-  display: block;
-  padding: 0px 5px;
-}
-
-input[type="radio"]:checked + span {
-  background: $brand-primary;
-  @include custom-radio-position();
+  input[type="radio"]:checked + span {
+    background: $brand-primary;
+    @include custom-radio-position();
+  }
 }
 
 .radio-inline input[type="text"].form-control {

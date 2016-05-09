@@ -2863,6 +2863,7 @@ select[multiple].input-lg,
   font-weight: normal;
   text-align: center;
   vertical-align: middle;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   cursor: pointer;
   background-image: none;
@@ -4462,6 +4463,12 @@ a.thumbnail.active {
   .alert-danger .alert-link {
     color: #b6240e; }
 
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0; }
+  to {
+    background-position: 0 0; } }
+
 @keyframes progress-bar-stripes {
   from {
     background-position: 40px 0; }
@@ -4495,6 +4502,7 @@ a.thumbnail.active {
 
 .progress.active .progress-bar,
 .progress-bar.active {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
   animation: progress-bar-stripes 2s linear infinite; }
 
 .progress-bar-success {
@@ -5108,9 +5116,15 @@ button.close {
   -webkit-overflow-scrolling: touch;
   outline: 0; }
   .modal.fade .modal-dialog {
+    -webkit-transform: translate(0, -25%);
+    -ms-transform: translate(0, -25%);
     transform: translate(0, -25%);
-    transition: transform 0.3s ease-out; }
+    transition: -webkit-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out; }
   .modal.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
     transform: translate(0, 0); }
 
 .modal-open .modal {
@@ -5453,16 +5467,23 @@ button.close {
       line-height: 1; }
     @media all and (transform-3d), (-webkit-transform-3d) {
       .carousel-inner > .item {
+        transition: -webkit-transform 0.6s ease-in-out;
         transition: transform 0.6s ease-in-out;
+        transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+        -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
+        -webkit-perspective: 1000px;
         perspective: 1000px; }
         .carousel-inner > .item.next, .carousel-inner > .item.active.right {
+          -webkit-transform: translate3d(100%, 0, 0);
           transform: translate3d(100%, 0, 0);
           left: 0; }
         .carousel-inner > .item.prev, .carousel-inner > .item.active.left {
+          -webkit-transform: translate3d(-100%, 0, 0);
           transform: translate3d(-100%, 0, 0);
           left: 0; }
         .carousel-inner > .item.next.left, .carousel-inner > .item.prev.right, .carousel-inner > .item.active {
+          -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
           left: 0; } }
   .carousel-inner > .active,
@@ -6182,14 +6203,24 @@ a:link, a:visited, a {
     transition: all 0.3s ease-in-out;
     display: inline-block; }
   .btn-animated:hover .btn-cover, .btn-animated:hover .btn-revealer, .btn-animated:active .btn-cover, .btn-animated:active .btn-revealer, .btn-animated:focus .btn-cover, .btn-animated:focus .btn-revealer {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
     transform: translateX(-100%); }
   .btn-animated.left-to-right .btn-revealer {
+    -webkit-transform: translateX(-200%);
+    -ms-transform: translateX(-200%);
     transform: translateX(-200%); }
   .btn-animated.left-to-right:hover .btn-revealer, .btn-animated.left-to-right:active .btn-revealer, .btn-animated.left-to-right:focus .btn-revealer {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
     transform: translateX(-100%); }
   .btn-animated.left-to-right:hover .btn-cover, .btn-animated.left-to-right:active .btn-cover, .btn-animated.left-to-right:focus .btn-cover {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
     transform: translateX(100%); }
   .btn-animated.right-to-left:hover .btn-cover, .btn-animated.right-to-left:hover .btn-revealer, .btn-animated.right-to-left:active .btn-cover, .btn-animated.right-to-left:active .btn-revealer, .btn-animated.right-to-left:focus .btn-cover, .btn-animated.right-to-left:focus .btn-revealer {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
     transform: translateX(-100%); }
 
 .btn {
@@ -6335,8 +6366,8 @@ a:link, a:visited, a {
 .text-info + .popover .popover-title {
   color: #0a4691; }
 
-input[type="checkbox"] {
-  opacity: 0; }
+.checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+  visibility: hidden; }
 
 .checkbox span, .checkbox-inline span {
   width: 20px;
@@ -6345,10 +6376,10 @@ input[type="checkbox"] {
   border-radius: 4px;
   display: inline-block;
   position: absolute;
-  left: -6px;
+  left: 0;
   top: 0; }
 
-input[type="checkbox"]:checked + span:before {
+.checkbox input[type="checkbox"]:checked + span:before, .checkbox-inline input[type="checkbox"]:checked + span:before {
   font-family: "Glyphicons Halflings";
   content: "\e013";
   padding: 3px 4px;
@@ -6356,18 +6387,18 @@ input[type="checkbox"]:checked + span:before {
   font-size: 10px;
   display: block; }
 
-input[type="checkbox"]:checked + span {
+.checkbox input[type="checkbox"]:checked + span, .checkbox-inline input[type="checkbox"]:checked + span {
   background: #0092d6;
   position: absolute;
-  left: -6px;
+  left: 0;
   top: 0; }
 
 .checkbox-inline input[type="text"].form-control {
   margin: -6px 0 0 20px;
   width: 120%; }
 
-input[type="radio"] {
-  opacity: 0; }
+.radio input[type="radio"], .radio-inline input[type="radio"] {
+  visibility: hidden; }
 
 .radio span, .radio-inline span {
   height: 20px;
@@ -6376,10 +6407,10 @@ input[type="radio"] {
   border: 1px solid #cccccc;
   display: inline-block;
   position: absolute;
-  left: -6px;
+  left: 0;
   top: 0; }
 
-input[type="radio"]:checked + span:before {
+.radio input[type="radio"]:checked + span:before, .radio-inline input[type="radio"]:checked + span:before {
   font-family: "Arial Black";
   content: "•";
   color: white;
@@ -6387,15 +6418,52 @@ input[type="radio"]:checked + span:before {
   display: block;
   padding: 0px 5px; }
 
-input[type="radio"]:checked + span {
+.radio input[type="radio"]:checked + span, .radio-inline input[type="radio"]:checked + span {
   background: #0092d6;
   position: absolute;
-  left: -6px;
+  left: 0;
   top: 0; }
 
 .radio-inline input[type="text"].form-control {
   margin: -6px 0 0 20px;
   width: 120%; }
+
+.toggle-switch input[type="checkbox"] {
+  visibility: hidden; }
+
+.toggle-switch input[type="checkbox"] + span {
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  display: block;
+  transition: all .3s ease-out;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  position: relative;
+  background: white;
+  border: 1px solid #cccccc; }
+  .toggle-switch input[type="checkbox"] + span::before {
+    box-shadow: 2px 1px 5px 0px rgba(50, 50, 50, 0.1);
+    border: 1px solid #cccccc;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: white;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    display: block;
+    content: '';
+    transition: all .25s ease-out; }
+
+.toggle-switch input[type="checkbox"]:checked + span:before {
+  -webkit-transform: translateX(40px);
+  -ms-transform: translateX(40px);
+  transform: translateX(40px); }
+
+.toggle-switch input[type="checkbox"]:checked + span {
+  background-color: #0092d6; }
 
 /* put all the none theme related files here e.g. showcase, documentation */
 .palette-tile {

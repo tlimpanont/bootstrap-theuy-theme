@@ -1,13 +1,13 @@
 @import "../custom-colors";
 @import "../custom-typography";
 
-input[type="checkbox"] {
-  opacity: 0;
+.checkbox input[type="checkbox"],  .checkbox-inline input[type="checkbox"] {
+  visibility: hidden;
 }
 
 @mixin custom-checkbox-position() {
   position: absolute;
-  left: -6px;
+  left: 0;
   top: 0;
 }
 
@@ -20,20 +20,20 @@ input[type="checkbox"] {
     display: inline-block;
     @include custom-checkbox-position();
   }
-}
 
-input[type="checkbox"]:checked + span:before {
-  font-family: "Glyphicons Halflings";
-  content: "\e013";
-  padding: 3px 4px;
-  color: white;
-  font-size: 10px;
-  display: block;
-}
+  input[type="checkbox"]:checked + span:before {
+    font-family: "Glyphicons Halflings";
+    content: "\e013";
+    padding: 3px 4px;
+    color: white;
+    font-size: 10px;
+    display: block;
+  }
 
-input[type="checkbox"]:checked + span {
-  background: $brand-primary;
-  @include custom-checkbox-position();
+  input[type="checkbox"]:checked + span {
+    background: $brand-primary;
+    @include custom-checkbox-position();
+  }
 }
 
 .checkbox-inline input[type="text"].form-control {
