@@ -6157,10 +6157,22 @@ a:link, a:visited, a {
   font-weight: normal;
   font-style: italic; }
 
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+  padding: 0; }
+  .btn-animated .btn-revealer, .btn-animated .btn-cover {
+    width: 100%;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block; }
+  .btn-animated:hover .btn-cover, .btn-animated:hover .btn-revealer {
+    transform: translateX(-100%); }
+
 .btn {
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s; }
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  transition: background-color 0.3s; }
   .btn:active {
     background: #0075ab !important; }
   .btn:hover {
