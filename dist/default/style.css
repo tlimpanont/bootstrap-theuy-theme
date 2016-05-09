@@ -6195,6 +6195,13 @@ a:link, a:visited, a {
 .icon-x-large {
   font-size: x-large; }
 
+.icon {
+  color: #cccccc; }
+  .icon:hover, .icon.hover {
+    color: #e0eef4; }
+  .icon.active, .icon:active {
+    color: #0092d6; }
+
 /* put all the none theme related files here e.g. showcase, documentation */
 .palette-tile {
   width: 60px;
