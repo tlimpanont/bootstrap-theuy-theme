@@ -6424,6 +6424,68 @@ a:link, a:visited, a {
 .text-info + .popover .popover-title {
   color: #0a4691; }
 
+input[type="checkbox"] {
+  opacity: 0; }
+
+.checkbox span, .checkbox-inline span {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  display: inline-block;
+  position: absolute;
+  left: -6px;
+  top: 0; }
+
+input[type="checkbox"]:checked + span:before {
+  font-family: "Glyphicons Halflings";
+  content: "\e013";
+  padding: 3px 4px;
+  color: white;
+  font-size: 10px;
+  display: block; }
+
+input[type="checkbox"]:checked + span {
+  background: #0092d6;
+  position: absolute;
+  left: -6px;
+  top: 0; }
+
+.checkbox-inline input[type="text"].form-control {
+  margin: -6px 0 0 20px;
+  width: 120%; }
+
+input[type="radio"] {
+  opacity: 0; }
+
+.radio span, .radio-inline span {
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  display: inline-block;
+  position: absolute;
+  left: -6px;
+  top: 0; }
+
+input[type="radio"]:checked + span:before {
+  font-family: "Arial Black";
+  content: "•";
+  color: white;
+  font-size: 15px;
+  display: block;
+  padding: 0px 5px; }
+
+input[type="radio"]:checked + span {
+  background: #0092d6;
+  position: absolute;
+  left: -6px;
+  top: 0; }
+
+.radio-inline input[type="text"].form-control {
+  margin: -6px 0 0 20px;
+  width: 120%; }
+
 /* put all the none theme related files here e.g. showcase, documentation */
 .palette-tile {
   width: 60px;
