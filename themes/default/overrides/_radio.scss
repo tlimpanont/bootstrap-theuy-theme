@@ -2,7 +2,8 @@
 @import "../custom-typography";
 
 .radio input[type="radio"],  .radio-inline input[type="radio"]  {
-  visibility: hidden;
+  opacity: 0;
+  visibility: visible;
 }
 
 @mixin custom-radio-position() {
@@ -32,6 +33,11 @@
   input[type="radio"]:checked + span {
     background: $brand-primary;
     @include custom-radio-position();
+  }
+
+  input[type="radio"]:focus + span {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
   }
 }
 

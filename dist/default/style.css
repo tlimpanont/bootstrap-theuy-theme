@@ -6367,7 +6367,8 @@ a:link, a:visited, a {
   color: #0a4691; }
 
 .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
-  visibility: hidden; }
+  opacity: 0;
+  visibility: visible; }
 
 .checkbox span, .checkbox-inline span {
   width: 20px;
@@ -6393,12 +6394,17 @@ a:link, a:visited, a {
   left: 0;
   top: 0; }
 
+.checkbox input[type="checkbox"]:focus + span, .checkbox-inline input[type="checkbox"]:focus + span {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px; }
+
 .checkbox-inline input[type="text"].form-control {
   margin: -6px 0 0 20px;
   width: 120%; }
 
 .radio input[type="radio"], .radio-inline input[type="radio"] {
-  visibility: hidden; }
+  opacity: 0;
+  visibility: visible; }
 
 .radio span, .radio-inline span {
   height: 20px;
@@ -6423,6 +6429,10 @@ a:link, a:visited, a {
   position: absolute;
   left: 0;
   top: 0; }
+
+.radio input[type="radio"]:focus + span, .radio-inline input[type="radio"]:focus + span {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px; }
 
 .radio-inline input[type="text"].form-control {
   margin: -6px 0 0 20px;
