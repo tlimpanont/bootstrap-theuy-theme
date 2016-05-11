@@ -12,11 +12,15 @@
   top: 0;
 }
 
+
+
 .checkbox, .checkbox-inline {
 
+  .custom-label {
+    margin-left: 10px;
+  }
 
-
-  span {
+  .before-after {
     width: 20px;
     height: 20px;
     border: 1px solid $light-gray;
@@ -25,7 +29,7 @@
     @include custom-checkbox-position();
   }
 
-  input[type="checkbox"]:checked + span:before {
+  input[type="checkbox"]:checked + .before-after:before {
     font-family: "Glyphicons Halflings";
     content: "\e013";
     padding: 3px 4px;
@@ -34,12 +38,12 @@
     display: block;
   }
 
-  input[type="checkbox"]:checked + span {
+  input[type="checkbox"]:checked + .before-after {
     background: $brand-primary;
     @include custom-checkbox-position();
   }
 
-  input[type="checkbox"]:focus + span {
+  input[type="checkbox"]:focus + .before-after {
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
   }

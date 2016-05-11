@@ -31,6 +31,10 @@
     @include button-bg-hover(white);
   }
 
+  &.btn-default {
+    @extend .btn-secondary;
+  }
+
   &.btn-modal {
     background: $blue-sea;
     color: white;

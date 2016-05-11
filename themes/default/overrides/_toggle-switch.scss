@@ -1,6 +1,6 @@
 @import "../custom-colors";
 
-$toggleButtonWidth: 40px;
+$toggleButtonWidth: 30px;
 $toggleButtonHeight: $toggleButtonWidth;
 $toggleContainerWidth: $toggleButtonWidth * 2;
 $toggleContainerHeight: $toggleContainerWidth / 2;
@@ -11,7 +11,7 @@ $toggleContainerRadius: $toggleContainerHeight / 2;
   visibility: hidden;
 }
 
-.toggle-switch input[type="checkbox"] + span {
+.toggle-switch input[type="checkbox"] + .before-after {
   width: $toggleContainerWidth;
   height: $toggleContainerHeight;
   border-radius: $toggleContainerRadius;
@@ -37,10 +37,10 @@ $toggleContainerRadius: $toggleContainerHeight / 2;
   }
 }
 
-.toggle-switch input[type="checkbox"]:checked + span:before {
+.toggle-switch input[type="checkbox"]:checked + .before-after:before {
   transform: translateX($toggleButtonWidth);
 }
 
-.toggle-switch input[type="checkbox"]:checked + span {
+.toggle-switch input[type="checkbox"]:checked + .before-after {
   background-color: $brand-primary;
 }
