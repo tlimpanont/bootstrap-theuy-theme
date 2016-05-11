@@ -14,6 +14,9 @@ gulp.task('nodemon', function () {
 
     nodemon({
         script: path.resolve(__dirname, '../server.js'),
+        ignore: [
+            'angular2-client/'
+        ],
         ext: 'js html'
     })
     .on('restart', function () {
