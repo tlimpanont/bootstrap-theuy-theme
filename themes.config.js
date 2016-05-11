@@ -2,10 +2,7 @@ var path = require('path');
 
 module.exports = {
     themeDirectoryNames: [
-        'darkly',
-        'flatly',
-        'default',
-        'ugly'
+        'default'
     ],
     getThemeScriptsDestPath(theme) {
         return path.resolve(__dirname, 'dist/' + theme + '/scripts/');
