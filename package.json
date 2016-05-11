@@ -32,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://limpanontt@stash.hamis.nl/scm/com/hamis-bootstrap-theme.git"
+    "url": "https://stash.hamis.nl/scm/com/hamis-bootstrap-theme.git"
   },
   "author": "HaMIS team Port of Rotterdam",
   "license": "ISC"

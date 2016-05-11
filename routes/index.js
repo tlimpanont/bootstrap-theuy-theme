@@ -7,6 +7,10 @@ function getCurrentUrl(request) {
     return request.connection.info.protocol + '://' + request.info.host + request.url.path;
 }
 
+function sortObject(o) {
+    return Object.keys(o).sort().reduce((r, k) => (r[k] = o[k], r), {});
+}
+
 module.exports = {
     method: 'GET',
     path: '/',
@@ -45,12 +49,15 @@ module.exports = {
 
         Promise.all(promises).then((themes) => {
             var npmInfo = require('../package.json');
-            reply({
+            var responseObject = {
                 version: npmInfo.version,
                 repository: npmInfo.repository,
                 dist: getCurrentUrl(request) + distFolder,
-                themes: themes
-            });
+                themes: themes,
+                showcase: getCurrentUrl(request) + 'showcase'
+            };
+
+            reply(sortObject(responseObject));
         });
     }
 };
