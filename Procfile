@@ -1,1 +1,1 @@
-web: node server.js
+web: cd ./angular2-components; npm install & npm install typings tsc -g && npm run tsc && node ../server.js
