@@ -7,13 +7,13 @@
 
 $btn-font-weight:                normal !default;
 
-$btn-default-color:              #333 !default;
-$btn-default-bg:                 #fff !default;
-$btn-default-border:             #ccc !default;
-
 $btn-primary-color:              #fff !default;
 $btn-primary-bg:                 $brand-primary !default;
 $btn-primary-border:             transparent !default;
+
+$btn-default-color:              $btn-primary-color !default;
+$btn-default-bg:                 $btn-primary-bg !default;
+$btn-default-border:             $btn-primary-border !default;
 
 $btn-success-color:              #fff !default;
 $btn-success-bg:                 $brand-success !default;

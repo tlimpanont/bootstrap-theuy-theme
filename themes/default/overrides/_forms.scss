@@ -9,6 +9,7 @@
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+  @extend .semi-bold;
 }
 
 .form-control[disabled] + .input-group-addon {
@@ -30,7 +31,7 @@
     text-transform: uppercase;
   }
   .form-control {
-    @extend .semi-bold;
+    font-size: $font-size-base;
   }
 
   .input-group-addon {
@@ -46,6 +47,7 @@
 }
 
 .form-group-sm {
+
   .input-group-addon {
     color: $semi-gray;
     .required {
@@ -74,7 +76,8 @@
   }
 
   ::-webkit-input-placeholder {
-    color: $gray;
+    color: $light-gray;
+    font-style: italic;
     font-size: $font-size-base;
   }
 

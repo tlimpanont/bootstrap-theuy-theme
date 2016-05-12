@@ -8,6 +8,8 @@
     color: $palette;
   }
 }
+
+// palettes names
 @include bg-text('blue', $blue);
 @include bg-text('blue-heaven', $blue-heaven);
 @include bg-text('light-blue', $light-blue);

@@ -1,0 +1,6 @@
+@import "../custom-font-faces";
+
+.alert.alert-danger:before {
+  content: 'Let op: ';
+  @extend .semi-bold;
+}

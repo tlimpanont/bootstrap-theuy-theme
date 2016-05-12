@@ -24,14 +24,62 @@
         <div class="col-md-12">
             <h1>Controls</h1>
         </div>
-        <div class="col-md-4">
-            {{> checkboxes }}
+        <div class="col-md-6">
+            <p>
+                <strong>checkbox and radios</strong>
+            </p>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="">
+                    Option one is this and that&mdash;be sure to include why it's great
+                </label>
+            </div>
+            <div class="checkbox disabled">
+                <label>
+                    <input type="checkbox" value="" disabled>
+                    Option two is disabled
+                </label>
+            </div>
+
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                    Option one is this and that&mdash;be sure to include why it's great
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                    Option two can be something else and selecting it will deselect option one
+                </label>
+            </div>
+            <div class="radio disabled">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+                    Option three is disabled
+                </label>
+            </div>
         </div>
-        <div class="col-md-4">
-            {{> radios }}
-        </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
             {{> toggle-switches }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Alerts and states</h1>
+        </div>
+        <div class="col-md-4">
+            <div class="alert alert-danger">
+                Dit is een verplicht veld!
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="alert alert-info">
+                Minimaal 3 kinderen meenemen
+            </div>
+        </div>
+        <div class="col-md-4">
+
         </div>
     </div>
 

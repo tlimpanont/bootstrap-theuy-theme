@@ -15,12 +15,10 @@
   -moz-transition: background-color 0.3s;
   transition: background-color 0.3s;
 
-  &:active {
-    background: #0075ab !important;
-  }
-
-  &:hover {
-    background: #33a8de;
+  &.btn-primary, &.btn-default {
+    &:hover, &:active, &:focus {
+      background: #33a8de !important;
+    }
   }
 
   &.btn-secondary {
@@ -31,13 +29,13 @@
     @include button-bg-hover(white);
   }
 
-  &.btn-default {
-    @extend .btn-secondary;
-  }
-
   &.btn-modal {
     background: $blue-sea;
     color: white;
     @include button-bg-hover($blue-sea);
+  }
+
+  &:focus {
+    outline: none !important;
   }
 }
