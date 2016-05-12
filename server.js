@@ -5,7 +5,8 @@ const path = require('path');
 
 var plugins = [
     require('vision'),
-    require('inert')
+    require('inert'),
+    require('h2o2')
 ];
 
 const server = new Hapi.Server({
@@ -50,7 +51,7 @@ server.register(plugins, (err) => {
     server.route(require('./routes/index'));
     server.route(require('./routes/dist'));
     server.route(require('./routes/showcase'));
-
+    
     server.start((err) => {
 
         if (err) {
