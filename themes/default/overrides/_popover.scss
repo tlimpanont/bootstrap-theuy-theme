@@ -15,6 +15,16 @@
   .popover-content {
     padding: 0;
   }
+
+  .popover-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    @extend .semi-bold;
+    color: $light-gray;
+    cursor: pointer;
+    font-size: larger;
+  }
 }
 
 .text-success + .popover .popover-title {

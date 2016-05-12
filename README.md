@@ -10,3 +10,6 @@ npm start;
 gulp dev-server;
 
 ```
+
+This repo also includes small example with angular2-components. See /angular2-components
+

@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "bootstrap-sass": "^3.3.6",
+    "h2o2": "^5.1.0",
     "handlebars": "^4.0.5",
     "hapi": "^13.3.0",
     "inert": "^3.2.1",

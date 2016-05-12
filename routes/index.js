@@ -54,7 +54,8 @@ module.exports = {
                 repository: npmInfo.repository,
                 dist: getCurrentUrl(request) + distFolder,
                 themes: themes,
-                showcase: getCurrentUrl(request) + 'showcase'
+                showcase: getCurrentUrl(request) + 'showcase',
+                angular2Components: getCurrentUrl(request) + 'angular2-components'
             };
 
             reply(sortObject(responseObject));
