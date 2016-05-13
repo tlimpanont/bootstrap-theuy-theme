@@ -1,5 +1,4 @@
-FROM dockerregistry.hamis.nl/nginx:1.9.12
+FROM dockerregistry.hamis.nl/nodejs:6.1.0-slim
 
 MAINTAINER Port of Rotterdam <noreply@portofrotterdam.com>
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d
+
