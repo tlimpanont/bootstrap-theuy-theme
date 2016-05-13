@@ -92,10 +92,10 @@
   }
 
   .glyphicon {
-    &.glyphicon-chevron-down, &.glyphicon-chevron-up {
+    &.glyphicon-triangle-bottom, &.glyphicon-triangle-top {
       display: inline-block;
       position: absolute;
-      top: 50%;
+      top: 55%;
       right: 10px;
     }
   }

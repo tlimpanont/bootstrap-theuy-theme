@@ -6091,10 +6091,10 @@ button.close {
     position: absolute;
     top: 10px;
     left: 10px; }
-  .form-group-lg .glyphicon.glyphicon-chevron-down, .form-group-lg .glyphicon.glyphicon-chevron-up {
+  .form-group-lg .glyphicon.glyphicon-triangle-bottom, .form-group-lg .glyphicon.glyphicon-triangle-top {
     display: inline-block;
     position: absolute;
-    top: 50%;
+    top: 55%;
     right: 10px; }
   .form-group-lg .input-group-addon {
     color: #999999; }
