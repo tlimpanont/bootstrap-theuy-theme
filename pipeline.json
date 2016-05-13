@@ -36,6 +36,18 @@
       "phase": "build",
       "description": "Push the Docker hamis-theme image to the registry",
       "type": "BuildDockerPush"
+    },
+    {
+      "phase": "deploy",
+      "description": "Deploy hamis-theme to ",
+      "environment": "dev",
+      "type": "DeployDocker",
+      "containerConfigurationLocation": "docker"
+    },
+    {
+      "phase": "verify",
+      "description": "Verify hamis-theme on ",
+      "environment": "dev"
     }
   ]
 }
