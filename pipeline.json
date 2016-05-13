@@ -1,0 +1,41 @@
+{
+  "name": "hamis-theme",
+  "category": "service",
+  "description": "Hamis-them service provides the theming to other services",
+  "autoRelease": {
+    "versionNumber": "1.0.1-${BUILDS_ALL_TIME}"
+  },
+  "locations": [
+    {
+      "location": "rdam",
+      "verifyPorts": [
+        {
+          "port": 8550,
+          "context": "/hamis-theme/"
+        }
+      ]
+    },
+    {
+      "location": "adam",
+      "verifyPorts": [
+        {
+          "port": 8750,
+          "context": "/hamis-theme/"
+        }
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "phase": "build",
+      "description": "Build hamis-theme",
+      "type": "BuildCustom",
+      "command": "PATH=$PATH:/apps/jenkins/build/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/5.6.0/bin\nexport PATH\nnpm install\ngulp build\ngit checkout -b releases/${VERSION}\nnpm version ${VERSION} -m \"Jenkins released releases/${VERSION}\"\ngit push --tags\ngit push -u origin releases/${VERSION}\nDOCKER_HOST_API=http://dockerbuilder.hamis.nl:2375\nAUTH_TOKEN=ewogICAgInVzZXJuYW1lIjogImhhbWlzaGFtaXMiLAogICAgInBhc3N3b3JkIjogIkhhbWlzIUAjIiwKICAgICJlbWFpbCI6ICJzLmRlbWlyZWxAcG9ydG9mcm90dGVyZGFtLmNvbSIKfQ==\nTAG=dockerregistry.hamis.nl/hamis-theme:$VERSION\nresponse=$(tar -czf - Dockerfile dist | curl --data-binary @- --header \"Content-Type: application/x-tar\" --dump-header - --no-buffer ${DOCKER_HOST_API}/build?t=${TAG})"
+    },
+    {
+      "phase": "build",
+      "description": "Push the Docker hamis-theme image to the registry",
+      "type": "BuildDockerPush"
+    }
+  ]
+}
