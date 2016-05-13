@@ -29,8 +29,8 @@
     "gulp-util": "^3.0.7"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "build": "./node_modules/gulp/bin/gulpfile.js build",
     "package": "$(cd docker &&./build.sh)"
   },
   "repository": {
