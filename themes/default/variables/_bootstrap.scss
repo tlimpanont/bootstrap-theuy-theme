@@ -1,4 +1,4 @@
-@import "custom-font-faces";
+@import "font-faces";
 
 $bootstrap-sass-asset-helper: false !default;
 //
@@ -7,22 +7,22 @@ $bootstrap-sass-asset-helper: false !default;
 
 
 //== Colors
-@import "custom-colors";
+@import "colors";
 
 
 //== Scaffolding
-@import "custom-scaffolding";
+@import "scaffolding";
 
 
 //== Typography
-@import "custom-typography";
+@import "typography";
 
 //== Iconography
-@import "custom-iconography";
+@import "iconography";
 
 
 //== Components
-@import "custom-components";
+@import "components";
 
 
 //== Tables
@@ -47,11 +47,11 @@ $table-border-color:            #ddd !default;
 
 
 //== Buttons
-@import "custom-buttons";
+@import "buttons";
 
 
 //== Forms
-@import "custom-forms";
+@import "forms";
 
 
 //== Dropdowns
@@ -320,7 +320,7 @@ $jumbotron-heading-font-size:    ceil(($font-size-base * 4.5)) !default;
 
 
 //== Form states and alerts
-@import "custom-form-states-and-alerts";
+@import "form-states-and-alerts";
 
 
 //== Tooltips
@@ -342,7 +342,7 @@ $tooltip-arrow-color:         $tooltip-bg !default;
 
 
 //== Popovers
-@import "custom-popovers";
+@import "popovers";
 
 //== Labels
 //

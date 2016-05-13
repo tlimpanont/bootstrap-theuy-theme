@@ -1,4 +1,4 @@
-@import "../custom-colors";
+@import "../variables/colors";
 
 @mixin bg-text($name, $palette) {
   .bg-#{$name} {

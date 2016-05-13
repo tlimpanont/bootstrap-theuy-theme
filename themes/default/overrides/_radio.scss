@@ -1,5 +1,5 @@
-@import "../custom-colors";
-@import "../custom-typography";
+@import "../variables/colors";
+@import "../variables/typography";
 
 .radio input[type="radio"],  .radio-inline input[type="radio"]  {
   opacity: 0;

@@ -1,7 +1,7 @@
-@import "../custom-colors";
-@import "../custom-typography";
-@import "../custom-buttons";
-@import "../custom-font-faces";
+@import "../variables/colors";
+@import "../variables/typography";
+@import "../variables/buttons";
+@import "../variables/font-faces";
 @import "animated-buttons";
 
 @mixin button-bg-hover($color) {

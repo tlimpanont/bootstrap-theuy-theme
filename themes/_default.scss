@@ -1,5 +1,5 @@
 // variables of bootstrap ready be declared with custom values see custom- prefix files
-@import "default/variables";
+@import "default/variables/bootstrap";
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 //when changing the default variables of the default bootstrap is not enough we can do css-structure overriding
 @import "default/overrides";
