@@ -31,7 +31,6 @@
   "scripts": {
     "start": "node server.js",
     "build": "gulp build",
-    "postinstall": "npm run build && cd angular2-components && npm install && cd ../",
     "package": "$(cd docker &&./build.sh)"
   },
   "repository": {
