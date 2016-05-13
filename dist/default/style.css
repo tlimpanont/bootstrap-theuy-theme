@@ -6060,6 +6060,8 @@ button.close {
     top: 10px;
     right: 50px;
     z-index: 5; }
+    .form-group-md .input-group-addon .required:before, .form-group-sm .input-group-addon .required:before {
+      content: "*"; }
 
 .form-group-sm .input-group-addon {
   color: #999999; }
@@ -6069,6 +6071,8 @@ button.close {
     top: 5px;
     right: 40px;
     z-index: 5; }
+    .form-group-sm .input-group-addon .required:before {
+      content: "*"; }
 
 .form-group-lg {
   position: relative; }
@@ -6104,6 +6108,8 @@ button.close {
       top: 10px;
       right: 60px;
       z-index: 5; }
+      .form-group-lg .input-group-addon .required:before {
+        content: "*"; }
 
 a:link, a:visited, a {
   text-decoration: underline; }

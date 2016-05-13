@@ -2,6 +2,7 @@
 @import "../variables/colors";
 @import "../variables/typography";
 @import "../variables/forms";
+@import "../variables/form-states-and-alerts";
 
 
 .form-control[disabled] {
@@ -37,7 +38,10 @@
   .input-group-addon {
     color: $semi-gray;
     .required {
-      color: $red;
+      &:before {
+        content:"*";
+      }
+      color: $state-danger-text;
       position: absolute;
       top: 10px;
       right: 50px;
@@ -51,7 +55,10 @@
   .input-group-addon {
     color: $semi-gray;
     .required {
-      color: $red;
+      &:before {
+        content:"*";
+      }
+      color: $state-danger-text;
       position: absolute;
       top: 5px;
       right: 40px;
@@ -103,7 +110,10 @@
   .input-group-addon {
     color: $semi-gray;
     .required {
-      color: $red;
+      &:before {
+        content:"*";
+      }
+      color: $state-danger-text;
       position: absolute;
       top: 10px;
       right: 60px;
